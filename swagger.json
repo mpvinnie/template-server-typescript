@@ -1,0 +1,42 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Template Documentation",
+    "description": "This is an API Example",
+    "version": "1.0.0",
+    "contact": {
+      "email": "vinniemalafaia@hotmail.com"
+    }
+  },
+  "paths": {
+    "/todos": {
+      "post": {
+        "tags": ["Todo"],
+        "summary": "Create a todo",
+        "description": "Create a new todo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "title": "Todo Sample"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    }
+  }
+}
