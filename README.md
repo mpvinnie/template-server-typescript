@@ -10,18 +10,16 @@
     CMD ["npm", "run", "dev"]
   ```
 
-* `dev` é o script criado no package.json, se ele for alterado, tbm temos que alterar no Dockerfile
+* `dev` é o script criado no package.json, se ele for alterado, tbm temos que alterar no Dockerfile.
 
 ## Passos
 
-* Executar o docker file na raiz do projeto.
+### docker-compose.yml
+
+* Trocar o nome do container na propriedade `container_name`
+
+* Executar o build para criar o container e configurar tudo (só precisa executar uma vez). _Para iniciar o servidor execute `docker-compose start`_
 
   ```powershell
-    docker build -t imageNameExample .
-  ```
-
-* Iniciar servidor no docker
-
-  ```powershell
-    docker run -p 3333:3333 imageNameExample
+    docker-compose up
   ```
