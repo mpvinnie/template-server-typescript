@@ -1,11 +1,8 @@
 import { inject, injectable } from 'tsyringe'
 
-import { Todo } from '../../infra/typeorm/entities/Todo'
-import { ITodosRepository } from '../../repositories/ITodosRepository'
-
-interface IRequest {
-  title: string
-}
+import { ICreateTodoDTO } from '@modules/todos/dtos/ICreateTodoDTO'
+import { Todo } from '@modules/todos/infra/typeorm/entities/Todo'
+import { ITodosRepository } from '@modules/todos/repositories/ITodosRepository'
 
 @injectable()
 export class CreateTodoUseCase {
@@ -14,7 +11,7 @@ export class CreateTodoUseCase {
     private todosRepository: ITodosRepository
   ) {}
 
-  async execute({ title }: IRequest): Promise<Todo> {
+  async execute({ title }: ICreateTodoDTO): Promise<Todo> {
     const todo = await this.todosRepository.create({ title })
 
     return todo

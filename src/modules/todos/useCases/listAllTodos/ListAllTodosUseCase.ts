@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe'
 
-import { Todo } from '../../infra/typeorm/entities/Todo'
-import { ITodosRepository } from '../../repositories/ITodosRepository'
+import { Todo } from '@modules/todos/infra/typeorm/entities/Todo'
+import { ITodosRepository } from '@modules/todos/repositories/ITodosRepository'
 
 @injectable()
 export class ListAllTodosUseCase {

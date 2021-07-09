@@ -1,7 +1,8 @@
 import { getRepository, Repository } from 'typeorm'
 
-import { ICreateTodoDTO } from '../../../dtos/ICreateTodoDTO'
-import { ITodosRepository } from '../../../repositories/ITodosRepository'
+import { ICreateTodoDTO } from '@modules/todos/dtos/ICreateTodoDTO'
+import { ITodosRepository } from '@modules/todos/repositories/ITodosRepository'
+
 import { Todo } from '../entities/Todo'
 
 export class TodosRepository implements ITodosRepository {

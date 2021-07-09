@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
-import { CreateTodoController } from '../../../useCases/createTodo/CreateTodoController'
-import { ListAllTodosController } from '../../../useCases/listAllTodos/ListAllTodosController'
+import { CreateTodoController } from '@modules/todos/useCases/createTodo/CreateTodoController'
+import { ListAllTodosController } from '@modules/todos/useCases/listAllTodos/ListAllTodosController'
 
 export const todosRoutes = Router()
 

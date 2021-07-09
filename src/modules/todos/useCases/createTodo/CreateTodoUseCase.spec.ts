@@ -1,4 +1,5 @@
-import { TodosRepositoryInMemory } from '../../repositories/in-memory/TodosRepositoryInMemory'
+import { TodosRepositoryInMemory } from '@modules/todos/repositories/in-memory/TodosRepositoryInMemory'
+
 import { CreateTodoUseCase } from './CreateTodoUseCase'
 
 let todosRepository: TodosRepositoryInMemory

@@ -1,7 +1,8 @@
 import { v4 as uuid } from 'uuid'
 
-import { ICreateTodoDTO } from '../../dtos/ICreateTodoDTO'
-import { Todo } from '../../infra/typeorm/entities/Todo'
+import { ICreateTodoDTO } from '@modules/todos/dtos/ICreateTodoDTO'
+import { Todo } from '@modules/todos/infra/typeorm/entities/Todo'
+
 import { ITodosRepository } from '../ITodosRepository'
 
 export class TodosRepositoryInMemory implements ITodosRepository {
