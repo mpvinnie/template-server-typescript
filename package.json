@@ -5,7 +5,7 @@
   "author": "Vinicius Peres <vinniemalafaia@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "dev": "ts-node-dev --poll --transpile-only --respawn --ignore-watch node_modules src/shared/infra/http/server.ts",
     "dev:server": "docker-compose up",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
     "test": "jest"
@@ -28,11 +28,13 @@
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.3",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.1.6",

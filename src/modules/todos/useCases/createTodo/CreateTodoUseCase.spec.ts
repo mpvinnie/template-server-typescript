@@ -1,15 +1,20 @@
+import { TodosRepositoryInMemory } from '../../repositories/in-memory/TodosRepositoryInMemory'
+import { CreateTodoUseCase } from './CreateTodoUseCase'
+
+let todosRepository: TodosRepositoryInMemory
+let createTodo: CreateTodoUseCase
+
 describe('CreateTodo', () => {
-  it('2 + 2 should be 4', () => {
-    const soma = 2 + 2
-    const result = 4
-
-    expect(soma).toBe(result)
+  beforeEach(() => {
+    todosRepository = new TodosRepositoryInMemory()
+    createTodo = new CreateTodoUseCase(todosRepository)
   })
+  it('should be able to create a new todo', async () => {
+    const todo = await createTodo.execute({
+      title: 'todo example'
+    })
 
-  it('2 + 2 should not be 5', () => {
-    const soma = 2 + 2
-    const result = 5
-
-    expect(soma).not.toBe(result)
+    expect(todo).toHaveProperty('id')
+    expect(todo.title).toBe('todo example')
   })
 })

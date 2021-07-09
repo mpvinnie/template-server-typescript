@@ -11,7 +11,7 @@ export class TodosRepository implements ITodosRepository {
     this.repository = getRepository(Todo)
   }
 
-  public async create({ title }: ICreateTodoDTO): Promise<Todo> {
+  async create({ title }: ICreateTodoDTO): Promise<Todo> {
     const todo = this.repository.create({
       title
     })
@@ -21,7 +21,7 @@ export class TodosRepository implements ITodosRepository {
     return todo
   }
 
-  public async listAll(): Promise<Todo[]> {
+  async listAll(): Promise<Todo[]> {
     return await this.repository.find()
   }
 }
