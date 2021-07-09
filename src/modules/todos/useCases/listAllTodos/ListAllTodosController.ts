@@ -9,8 +9,6 @@ export class ListAllTodosController {
 
     const todos = await listAllTodos.execute()
 
-    console.log('testesteste')
-
     return response.status(200).json({ todos })
   }
 }

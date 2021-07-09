@@ -71,7 +71,7 @@ Antes de executar os serviços é preciso trocar as configurações do container
     })
   ```
 
-* Após configurar os services basta executar o comando abaixo para fazer o build a partir do docker-compose. _(Só é preciso executar uma vez. após isso é apenas basta executar o comando `docker-compose start` para iniciar o servidor)._
+* Após configurar os services basta executar o comando abaixo para fazer o build a partir do docker-compose.
 
   ```powershell
     docker-compose up
