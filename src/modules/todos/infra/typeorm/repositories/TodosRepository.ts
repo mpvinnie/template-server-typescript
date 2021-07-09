@@ -1,31 +1,27 @@
-import { v4 as uuid } from 'uuid'
+import { getRepository, Repository } from 'typeorm'
 
 import { ICreateTodoDTO } from '../../../dtos/ICreateTodoDTO'
-import { ITodosRepository } from '../../../repositories/implementations/ITodosRepository'
+import { ITodosRepository } from '../../../repositories/ITodosRepository'
 import { Todo } from '../entities/Todo'
 
 export class TodosRepository implements ITodosRepository {
-  private todos: Todo[]
+  private repository: Repository<Todo>
 
   constructor() {
-    this.todos = []
+    this.repository = getRepository(Todo)
   }
 
   public async create({ title }: ICreateTodoDTO): Promise<Todo> {
-    const todo = new Todo()
-
-    Object.assign(todo, {
-      id: uuid(),
-      title,
-      created_at: new Date()
+    const todo = this.repository.create({
+      title
     })
 
-    this.todos.push(todo)
+    await this.repository.save(todo)
 
     return todo
   }
 
   public async listAll(): Promise<Todo[]> {
-    return this.todos
+    return await this.repository.find()
   }
 }

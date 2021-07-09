@@ -6,6 +6,7 @@ import swaggerFile from '../../../../swagger.json'
 import { appRoutes } from './routes'
 
 import '../typeorm'
+import '../../containers'
 
 const app = express()
 

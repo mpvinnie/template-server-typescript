@@ -1,16 +1,16 @@
 import { Request, Response } from 'express'
+import { container } from 'tsyringe'
 
-import { TodosRepository } from '../../infra/typeorm/repositories/TodosRepository'
 import { ListAllTodosUseCase } from './ListAllTodosUseCase'
-
-const todosRepository = new TodosRepository()
 
 export class ListAllTodosController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const listAllTodos = new ListAllTodosUseCase(todosRepository)
+    const listAllTodos = container.resolve(ListAllTodosUseCase)
 
     const todos = await listAllTodos.execute()
 
-    return response.status(200).json(todos)
+    console.log('testesteste')
+
+    return response.status(200).json({ todos })
   }
 }
