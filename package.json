@@ -28,7 +28,6 @@
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
-
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.10.1",
     "typescript": "^4.3.5"
@@ -36,12 +35,13 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "joi": "^17.4.0",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.1.6",
+    "ts-jest": "^27.0.3",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.34",
-    "uuid": "^8.3.2",
-    "ts-jest": "^27.0.3"
+    "uuid": "^8.3.2"
   }
 }
