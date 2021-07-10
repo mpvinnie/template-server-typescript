@@ -105,6 +105,26 @@ Antes de executar os serviços é preciso trocar as configurações do container
     })
   ```
 
+### ormconfig.json
+
+  ```json
+  {
+    "type": "postgres",
+    "port": 5432, // mesma porta do database no docker-compose.yml
+    "host": "localhost",
+    "username": "docker",  // mesmo username do database no docker-compose.yml
+    "password": "docker",  // mesma senha do database no docker-compose.yml
+    "database": "database_name",  // mesmo nome do database no docker-compose.yml
+    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
+    },
+    "entities": [
+      "./src/modules/**/infra/typeorm/entities/*.ts"
+    ]
+  }
+  ```
+
 ### Opcional
 
 * Este passo só deve ser seguido caso queira testar a criação e listagem de todos.
