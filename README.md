@@ -1,8 +1,25 @@
-# Settings
+# Getting Started
 
-## Pré-configurações
+Template de servidor node configurado com typescript, linting, database, docker, schema validation, jest, ddd structure.
 
----
+## Pré-requisitos
+
+* [Docker](https://www.docker.com/)
+* [docker-compose](https://docs.docker.com/compose/install/)
+
+## Configurações e Informações
+
+### package-json
+
+  ```json
+  {
+    "name": "template-server-typescript", // nome do servidor node
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Vinicius Peres <vinniemalafaia@hotmail.com>", // nome e email do author
+    "license": "MIT",
+  }
+  ```
 
 ### Dockerfile
 
@@ -10,7 +27,7 @@
     CMD ["npm", "run", "dev"]
   ```
 
-* `dev` é o script criado no package.json, se ele for alterado, tbm temos que alterar no Dockerfile.
+* `dev` é o script criado no package.json, se ele for alterado, também temos que alterar no Dockerfile.
 
 ### Database
 
@@ -71,8 +88,16 @@ Antes de executar os serviços é preciso trocar as configurações do container
     })
   ```
 
-* Após configurar os services basta executar o comando abaixo para fazer o build a partir do docker-compose.
+### Opcional
 
-  ```powershell
-    docker-compose up
+* Este passo só deve ser seguido caso queira testar a criação e listagem de todos.
+
+  ```node
+    yarn typeorm migration:run
+  ```
+
+* Após configurar os services basta executar o comando abaixo para fazer o build e iniciar o servidor a partir do docker-compose.
+
+  ```node
+    yarn dev:server
   ```
