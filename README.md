@@ -6,8 +6,25 @@ Template de servidor node configurado com typescript, linting, database, docker,
 
 * [Docker](https://www.docker.com/)
 * [docker-compose](https://docs.docker.com/compose/install/)
+* [Git](https://git-scm.com/)
 
 ## Configurações e Informações
+
+* Clone o repositório em um diretório de preferência usando o git.
+
+  ```bash
+  git clone https://github.com/mpvinnie/template-server-typescript.git server_name
+  ```
+
+* Em um terminal vá até o diretório e instale as dependências.
+
+  ```bash
+  npm install
+
+  ou
+
+  yarn
+  ```
 
 ### package-json
 
